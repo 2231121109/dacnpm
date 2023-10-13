@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+    php-apache-environment:
+        container_name: php-apache
+        build:
+            context: ./php-apache2
+            dockerfile: Dockerfile
+        depends_on:
+          - db
+        volumes:
+            - ./public/:/var/www/html/public/
+            - ./mvc/:/var/www/html/mvc/
+            - ./index.css:/var/www/html/index.css
+            - ./index.php:/var/www/html/index.php
+        ports:
+            - 8000:80   
+    db:
+        container_name: db
+        image: mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: mysql12345
+            MYSQL_DATABASE: dkhp
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: mysql12345
+        ports:
+            - "3306:3306"
+        volumes: # khởi tạo dữ liệu
+            - ./db/dkhp.sql:/docker-entrypoint-initdb.d/dump.sql
+    adminer:
+      image: adminer
+      ports:
+        - 9081:8080
