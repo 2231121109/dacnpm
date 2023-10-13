@@ -13,10 +13,11 @@ services:
             - ./index.css:/var/www/html/index.css
             - ./index.php:/var/www/html/index.php
         ports:
-            - 8000:80   
+            - 8000:80 
     db:
         container_name: db
         image: mysql
+        # command: --default-authentication-plugin=mysql_native_password
         restart: always
         environment:
             MYSQL_ROOT_PASSWORD: mysql12345
@@ -27,7 +28,11 @@ services:
             - "3306:3306"
         volumes: # khởi tạo dữ liệu
             - ./db/dkhp.sql:/docker-entrypoint-initdb.d/dump.sql
+            - ./mysql/my.cnf:/etc/my.cnf
+        # entrypoint: ['/entrypoint.sh', '--character-set-server=utf8', '--collation-server=utf8_general_ci']
     adminer:
-      image: adminer
-      ports:
-        - 9081:8080
+        image: adminer
+        ports:
+            - 9081:8080
+        depends_on:
+            - db

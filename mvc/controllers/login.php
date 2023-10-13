@@ -6,11 +6,12 @@ include "../config/db_connect.php";
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
+    echo $username;
     // PDO
     $sql = "SELECT * FROM `student` WHERE `username` like '$username'";
 
     $query = $conn->query($sql);
-
+    echo $query->rowCount();
     $query->setFetchMode(PDO::FETCH_ASSOC);
     if ($query->rowCount() == 1){
         $row = $query->fetch();

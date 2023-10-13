@@ -17,6 +17,7 @@ SET time_zone = "+07:00";
 CREATE SCHEMA IF NOT EXISTS `dkhp`;
 USE `dkhp` ;
 -- --------------------------------------------------------
+ALTER DATABASE  `dkhp` CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 --
 -- Cấu trúc bảng cho bảng `admin`

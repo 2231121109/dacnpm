@@ -17,7 +17,7 @@
 <body>
   <header>
     <div class="logo">
-      <img src="../../public/img/img_LandingGr12.png" alt="" class="header-logo">
+      <h2>Môn công nghệ phần mềm - Nhóm 8</h2>
     </div>
     <input type="checkbox" id="menu-bar">
     <label for="menu-bar" class="fas fa-bars"></label>
@@ -32,15 +32,12 @@
   </header>
   <div class="main">
     <div class="decoration">
-      <h3>HCMUS PORTAL</h3>
+      <h3>UT PORTAL</h3>
       <div class="title">
-        <p>Một website đăng ký học phần tiện lợi của trường đại học, </p>
+        <p>Website đăng ký học phần tiện lợi của trường đại học giao thông vận tải </p>
         <p>với những tính năng đặc biệt và hữu ích dành cho sinh viên.</p>
       </div>
 
-    </div>
-    <div class="image">
-      <img src="../../public/img/BG_Book_Landing.png" alt="">
     </div>
   </div>
 
