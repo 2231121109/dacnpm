@@ -12,6 +12,9 @@ try {
     // $conn = new mysqli($host, $username, $password, $dbname, $port);
     // $conn->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // echo "Kết nối thành công";
+    $sqli = mysqli_connect($host, $username, $password, $dbname, $port);
+    mysqli_query($sqli, "SET NAMES 'UTF8'");
+    mysqli_report(MYSQLI_REPORT_STRICT | MYSQLI_REPORT_ERROR);
 } catch (PDOException $e){
     echo "Lỗi kết nối: " . $e->getMessage();
 }

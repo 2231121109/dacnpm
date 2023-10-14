@@ -3,11 +3,7 @@ session_start();
 include "../config/db_connect.php";
 
 // Establishing MySQLi connection for DELETE query
-// instead of using PDO connection
-$sqli = mysqli_connect($host, $username, $password, $dbname, $port);
-mysqli_set_charset($sqli, 'UTF8');
 // For catching mysqli_sql_exception
-mysqli_report(MYSQLI_REPORT_STRICT | MYSQLI_REPORT_ERROR);
 
 if (isset($_POST['trade'])) {
     $trade_id = $_POST['select-demand'];

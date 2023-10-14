@@ -20,6 +20,9 @@
 #  php 7 
 FROM php:7.4-apache
 
+
+WORKDIR /var/www/html
+
 COPY my-apache2.conf /etc/apache2/apach2.conf
 
 RUN apt-get update

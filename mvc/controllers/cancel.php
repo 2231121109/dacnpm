@@ -4,8 +4,8 @@ include "../config/db_connect.php";
 
 // Establishing MySQLi connection for DELETE query
 // instead of using PDO connection
-$sqli = mysqli_connect($host, $username, $password, $dbname, $port);
-mysqli_set_charset($sqli, 'UTF8');
+
+// mysqli_set_charset($sqli, 'UTF8');
 // For catching mysqli_sql_exception
 mysqli_report(MYSQLI_REPORT_STRICT | MYSQLI_REPORT_ERROR);
 
