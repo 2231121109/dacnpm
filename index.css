@@ -20,10 +20,10 @@ body {
   Top: 50%;
   Left: 50%;
   Transform: translate( -50%, -50%);
-  background-image: url("./public/img/img_Login3.png");
+  /* background-image: url("./public/img/img_Login3.png"); */
   background-size: 100%;
   background-repeat: no-repeat;
-  width: 406px;
+  width: 550px;
   height: 651px;
 }
 .container img{
@@ -175,4 +175,11 @@ form .user_field{
   border: none;
   cursor: pointer;
   outline: none;
+}
+
+.logo {
+  margin: 87px auto 20px auto; /* căn giữa theo chiều ngang */
+  display: block; /* Đảm bảo ảnh không bị ảnh hưởng bởi inline-box spacing */
+  width: 170px;
+  height: auto;
 }

@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en" dir="ltr">
 
 <head>
   <meta charset="utf-8">
   <title>Đăng nhập</title>
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./index.css?c=142165626443">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
 </head>
 
 <body>
+  <img class="logo" src="./public/img/img_Login3.png" />
   <div class="container">
-
     <div class="man">
       <img src="./public/img/img_Login1.png" />
     </div>

@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <img class="logo" src="../../public/img/img_Login3.png" />
 
   <div class="container">
     <!-- Error log -->

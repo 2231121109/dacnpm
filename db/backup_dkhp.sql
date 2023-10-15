@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Oct 14, 2023 at 04:06 PM
+-- Generation Time: Oct 15, 2023 at 07:29 AM
 -- Server version: 5.7.43
 -- PHP Version: 8.2.11
 
@@ -46,8 +46,11 @@ INSERT INTO `admin` (`ID`, `username`, `password`, `faculty`, `position`, `fulln
 (2018, 'admin2018', 'admin2018', 2018, 'GV', 'Lê Thị A', '2018@admin.edu.vn', '1997-01-02'),
 (2019, 'admin2019', 'admin2019', 2019, 'GV', 'Lê Thị B', '2019@admin.edu.vn', '1996-02-03'),
 (2020, 'admin2020', 'admin2020', 2020, 'GV', 'Lê Thị C', '2020@admin.edu.vn', '1995-03-04'),
-(2021, 'admin2021', 'admin2021', 2021, 'GV', 'Lê Thị D', '2021@admin.edu.vn', '1994-04-05');
-
+(2021, 'admin2021', 'admin2021', 2021, 'GV', 'Lê Thị D', '2021@admin.edu.vn', '1994-04-05'),
+(2022, 'admin2022', 'admin2022', 2022, 'GV', 'Lê Đức Bình', '2022@admin.edu.vn', '1989-01-02'),
+(2023, 'admin2023', 'admin2023', 2023, 'GV', 'Lê Thị B', '2023@admin.edu.vn', '1988-02-03'),
+(2024, 'admin2024', 'admin2024', 2024, 'GV', 'Lê Thị C', '2024@admin.edu.vn', '2000-03-04'),
+(2025, 'admin2025', 'admin2025', 2025, 'GV', 'Lê Thị D', '2025@admin.edu.vn', '1997-04-05');
 
 -- --------------------------------------------------------
 
@@ -70,7 +73,17 @@ INSERT INTO `available_course` (`period_id`, `course_id`, `faculty`, `school_yea
 (1, 111, 2018, '2018'),
 (1, 222, 2019, '2019'),
 (1, 333, 2020, '2020'),
-(1, 444, 2021, '2021');
+(1, 444, 2021, '2021'),
+(1, 455, 2018, '2018'),
+(2, 456, 2019, '2019'),
+(2, 457, 2020, '2020'),
+(3, 458, 2021, '2021'),
+(4, 457, 2022, '2022'),
+(5, 458, 2024, '2024'),
+(6, 459, 2023, '2023'),
+(7, 460, 2025, '2025'),
+(8, 461, 2022, '2022'),
+(8, 462, 2021, '2021');
 
 -- --------------------------------------------------------
 
@@ -98,7 +111,16 @@ INSERT INTO `available_course_info` (`period_id`, `course_id`, `class_id`, `room
 (1, 111, 101, 'D102', 120, 1, 4, '2018-03-02 07:30:00', 4),
 (1, 222, 202, 'E101', 100, 6, 9, '2019-03-02 12:30:00', 5),
 (1, 333, 303, 'F202', 80, 1, 4, '2020-03-02 07:30:00', 6),
-(1, 444, 404, 'G303', 60, 6, 9, '2021-03-02 12:30:00', 7);
+(1, 444, 404, 'G303', 60, 6, 9, '2021-03-02 12:30:00', 7),
+(1, 455, 101, 'A104', 120, 1, 4, '2023-03-02 07:30:00', 4),
+(2, 456, 102, 'B104', 120, 1, 9, '2023-03-02 07:30:00', 5),
+(2, 457, 202, 'C007', 120, 1, 4, '2023-03-02 07:30:00', 6),
+(3, 458, 203, 'D102', 120, 1, 4, '2023-03-02 07:30:00', 7),
+(4, 457, 303, 'D303', 120, 1, 4, '2023-03-02 07:30:00', 2),
+(5, 458, 304, 'D303', 120, 1, 4, '2023-03-02 07:30:00', 3),
+(6, 459, 304, 'B104', 120, 1, 4, '2023-03-02 07:30:00', 2),
+(7, 460, 304, 'C007', 120, 1, 4, '2023-03-02 07:30:00', 5),
+(8, 461, 304, 'B104', 120, 1, 4, '2023-03-02 07:30:00', 7);
 
 -- --------------------------------------------------------
 
@@ -119,9 +141,13 @@ CREATE TABLE `class` (
 
 INSERT INTO `class` (`ID`, `name`, `school_year`, `faculty`) VALUES
 (101, '18_1', '2018', 2018),
+(102, '102', '2022', 2022),
 (202, '19_2', '2019', 2019),
+(203, '203', '2023', 2023),
 (303, '20_3', '2020', 2020),
-(404, '21_4', '2021', 2021);
+(304, '304', '2024', 2024),
+(404, '21_4', '2021', 2021),
+(405, '405', '2025', 2025);
 
 -- --------------------------------------------------------
 
@@ -141,10 +167,19 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`ID`, `name`, `credits`, `faculty`) VALUES
-(111, 'Vật lý đại cương 1', 3, 2018),
+(111, 'An toàn thông tin', 3, 2018),
 (222, 'Toán rời rạc', 3, 2019),
-(333, 'Tâm lý đại cương', 2, 2020),
-(444, 'Nhập môn công nghệ phần mềm', 4, 2021);
+(333, 'Công nghệ phần mềm', 2, 2020),
+(444, 'Phân tích thiết kế giải thuật', 4, 2021),
+(455, 'Vật lý đại cương 1', 3, 2022),
+(456, 'Toán chuyên đề 1', 3, 2018),
+(457, 'Giải tích 1', 2, 2018),
+(458, 'Nhập môn ngành Công nghệ thông tin', 4, 2022),
+(459, 'Kiến trúc máy tính', 4, 2022),
+(460, 'Quản trị doanh nghiệp Công nghệ thông tin', 4, 2023),
+(461, 'Mạng máy tính', 4, 2025),
+(462, 'Cấu trúc dữ liệu và giải thuật', 4, 2025),
+(463, 'Kỹ thuật lập trình', 4, 2022);
 
 -- --------------------------------------------------------
 
@@ -209,11 +244,14 @@ CREATE TABLE `faculty` (
 --
 
 INSERT INTO `faculty` (`ID`, `name`) VALUES
-(2018, 'CNTT'),
-(2019, 'Sinh'),
-(2020, 'Hóa'),
-(2021, 'Toán');
-
+(2018, 'Khoa Toán Tin'),
+(2019, 'Khoa BM Vật lý'),
+(2020, 'Khoa BM Hóa'),
+(2021, 'Khoa Ngôn ngữ'),
+(2022, 'Khoa Công nghệ Thông tin'),
+(2023, 'Khoa Quản trị Kinh doanh'),
+(2024, 'Khoa Công nghệ Sinh học'),
+(2025, 'Khoa Điện tử Viễn thông');
 
 -- --------------------------------------------------------
 
@@ -237,7 +275,11 @@ INSERT INTO `registration_period` (`id`, `year_create`, `semester`, `opening_tim
 (1, '2021', 1, '2021-02-01 09:00:00', '2021-02-08 09:00:00'),
 (2, '2021', 2, '2021-08-01 09:00:00', '2021-08-08 09:00:00'),
 (3, '2020', 3, '2020-12-01 09:00:00', '2020-12-08 09:00:00'),
-(4, '2019', 1, '2019-02-01 09:00:00', '2019-02-08 09:00:00');
+(4, '2019', 1, '2019-02-01 09:00:00', '2019-02-08 09:00:00'),
+(5, '2022', 1, '2022-02-01 09:00:00', '2022-02-08 09:00:00'),
+(6, '2023', 2, '2023-08-01 09:00:00', '2023-08-08 09:00:00'),
+(7, '2024', 3, '2024-12-01 09:00:00', '2024-12-08 09:00:00'),
+(8, '2025', 1, '2025-02-01 09:00:00', '2025-02-08 09:00:00');
 
 -- --------------------------------------------------------
 
@@ -254,7 +296,11 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`name`) VALUES
+('A104'),
+('B104'),
+('C007'),
 ('D102'),
+('D303'),
 ('E101'),
 ('F202'),
 ('G303');
@@ -279,7 +325,11 @@ INSERT INTO `schedule` (`period`, `start_time`, `end_time`) VALUES
 (1, '07:30:00', '08:20:00'),
 (4, '10:20:00', '11:10:00'),
 (6, '12:30:00', '13:20:00'),
-(9, '15:10:00', '16:00:00');
+(9, '15:10:00', '16:00:00'),
+(11, '17:30:00', '18:15:00'),
+(14, '18:15:00', '19:20:00'),
+(16, '19:20:00', '20:10:00'),
+(19, '20:20:00', '21:10:00');
 
 -- --------------------------------------------------------
 
@@ -299,7 +349,11 @@ INSERT INTO `school_year` (`year`) VALUES
 ('2018'),
 ('2019'),
 ('2020'),
-('2021');
+('2021'),
+('2022'),
+('2023'),
+('2024'),
+('2025');
 
 -- --------------------------------------------------------
 
@@ -326,11 +380,14 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`ID`, `username`, `password`, `faculty`, `class`, `school_year`, `fullname`, `email`, `address`, `date_of_birth`, `max_credits`) VALUES
-(1, '001', 'student001', 2018, 101, 2018, 'Nguyễn Văn A', '001@student.edu.vn', 'Nguyễn Văn Tăng', '2000-12-11', 25),
-(2, '002', 'student002', 2019, 202, 2019, 'Nguyễn Văn B', '002@student.edu.vn', 'Lê Văn Việt', '2001-11-10', 25),
-(3, '003', 'student003', 2020, 303, 2020, 'Trương Văn C', '003@student.edu.vn', 'Võ Văn Ngân', '2002-10-09', 25),
-(4, '004', 'student004', 2021, 404, 2021, 'Trương Văn D', '004@student.edu.vn', 'Kha Vạn Cân', '2003-09-08', 25)
-;
+(1, '001', 'student001', 2018, 101, '2018', 'Nguyễn Văn A', '001@student.edu.vn', 'Nguyễn Văn Tăng', '2000-12-11', 25),
+(2, '002', 'student002', 2019, 202, '2019', 'Nguyễn Văn B', '002@student.edu.vn', 'Lê Văn Việt', '2001-11-10', 25),
+(3, '003', 'student003', 2020, 303, '2020', 'Trương Văn C', '003@student.edu.vn', 'Võ Văn Ngân', '2002-10-09', 25),
+(4, '004', 'student004', 2021, 404, '2021', 'Trương Văn D', '004@student.edu.vn', 'Kha Vạn Cân', '2003-09-08', 25),
+(5, '005', '005', 2023, 101, '2023', 'Trần trọng Hiến', '005@student.edu.vn', 'Nguyễn Văn Tăng', '2000-12-11', 25),
+(6, '006', '006', 2022, 202, '2023', 'Trần Nguyễn Việt Hùng', '006@student.edu.vn', 'Lê Văn Việt', '2001-11-10', 25),
+(7, '007', '007', 2022, 303, '2023', 'Tăng Chí Thanh', '007@student.edu.vn', 'Võ Văn Ngân', '2002-10-09', 25),
+(8, '008', '008', 2023, 404, '2023', 'Lê Huỳnh Đức', '008@student.edu.vn', 'Kha Vạn Cân', '2003-09-08', 25);
 
 -- --------------------------------------------------------
 
@@ -355,7 +412,6 @@ CREATE TABLE `trade` (
 --
 
 INSERT INTO `trade` (`trade_ID`, `period_id`, `course_id`, `class_id`, `student_id`, `target_course_id`, `target_class_id`, `student2_id`, `state`) VALUES
-(1, 1, 111, 101, 1, 222, 202, NULL, NULL),
 (2, 1, 222, 202, 2, 333, 303, NULL, NULL),
 (3, 1, 333, 303, 3, 111, 101, NULL, NULL),
 (4, 1, 444, 404, 4, 222, 202, NULL, NULL);
@@ -483,37 +539,37 @@ ALTER TABLE `trade`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2027;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2026;
 
 --
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=405;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=406;
 
 --
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=445;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=464;
 
 --
 -- AUTO_INCREMENT for table `faculty`
 --
 ALTER TABLE `faculty`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2023;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2026;
 
 --
 -- AUTO_INCREMENT for table `registration_period`
 --
 ALTER TABLE `registration_period`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `trade`
